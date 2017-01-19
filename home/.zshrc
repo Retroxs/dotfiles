@@ -50,7 +50,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd mvn)
+plugins=(git wd zsh-autosuggestions sublime web-search)
 
 # User configuration
 
@@ -74,7 +74,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -87,6 +86,10 @@ source $ZSH/oh-my-zsh.sh
 # py_virtualenv
 source /Users/HUI/Library/Python/2.7/bin/virtualenvwrapper.sh
 
+#pyrnv_setting
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 # For NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -94,6 +97,7 @@ source $(brew --prefix nvm)/nvm.sh
 #my_aliases
 alias qrsctl="/Users/HUI/Documents/qiniu/qrsctl/qrsctl"
 alias mongod-start="mongod --dbpath=Documents/data/db --fork --logpath=Documents/log/mongod.log"
+alias redis-start='redis-server /usr/local/etc/redis.conf'
 alias unzip='python ~/.unzip.py'
 alias mvn-i-proxy="mvn dependency:resolve -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
 
